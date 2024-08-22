@@ -64,7 +64,7 @@ const Form1Screen = ({ route, navigation }) => {
                     value={phone}
                     onChangeText={text => setPhone(text.replace(/[^0-9]/g, ''))}
                     keyboardType="phone-pad"
-                    maxLength={10} // Limit input to 10 digits
+                    maxLength={10}
                 />
             </View>
             <Button title="Next" onPress={handleNext} />

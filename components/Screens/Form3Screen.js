@@ -11,10 +11,10 @@ const Form3Screen = ({ route, navigation }) => {
     const [cvv, setCvv] = useState(formData.cvv || '');
 
     const formatExpiryDate = (text) => {
-        // Remove non-numeric characters
+        // for removing any of the non-numeric characters
         let formattedText = text.replace(/[^0-9]/g, '');
 
-        // Add forward slash after 2 digits
+        // for adding forward slash after 2 digits
         if (formattedText.length > 2) {
             formattedText = `${formattedText.slice(0, 2)}/${formattedText.slice(2, 4)}`;
         }
@@ -23,7 +23,7 @@ const Form3Screen = ({ route, navigation }) => {
     };
 
     const handleSubmit = () => {
-        // Validate card number and CVV
+        // Validate or check for card number and CVV
         if (cardNumber.length !== 16) {
             Alert.alert('Error', 'Card number must be 16 digits.');
             return;
@@ -55,7 +55,7 @@ const Form3Screen = ({ route, navigation }) => {
                     onChangeText={text => setCardNumber(text.replace(/[^0-9]/g, '').slice(0, 16))}
                     style={styles.input}
                     keyboardType="numeric"
-                    maxLength={16} // Limit input to 16 digits
+                    maxLength={16} 
                 />
             </View>
             <View style={styles.inputContainer}>
@@ -66,7 +66,7 @@ const Form3Screen = ({ route, navigation }) => {
                     onChangeText={text => setExpiryDate(formatExpiryDate(text))}
                     style={styles.input}
                     keyboardType="numeric"
-                    maxLength={5} // Limit input to 5 characters (MM/YY)
+                    maxLength={5} 
                 />
             </View>
             <View style={styles.inputContainer}>
@@ -77,7 +77,7 @@ const Form3Screen = ({ route, navigation }) => {
                     onChangeText={text => setCvv(text.replace(/[^0-9]/g, '').slice(0, 3))}
                     style={styles.input}
                     secureTextEntry
-                    maxLength={3} // Limit input to 3 digits
+                    maxLength={3}
                 />
             </View>
             <Button title="Submit" onPress={handleSubmit} />

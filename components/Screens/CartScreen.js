@@ -13,7 +13,7 @@ const CartScreen = ({ navigation }) => {
             return;
         }
 
-        // Show an alert to confirm checkout
+        
         Alert.alert(
             "Confirm Checkout",
             `Total: R${totalCost}. Do you want to proceed with the checkout?`,

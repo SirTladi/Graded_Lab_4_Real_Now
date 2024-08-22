@@ -39,7 +39,7 @@ const ProfileScreen = ({ route }) => {
         }
     }, [user]);
 
-    // Function to handle saving profile
+  //this one is for handling to saving a profile
     const handleSaveProfile = () => {
         // Input validation
         const isValidInteger = (value, maxLength) => /^\d+$/.test(value) && value.length <= maxLength;

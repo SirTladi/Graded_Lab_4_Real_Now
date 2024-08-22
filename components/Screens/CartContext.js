@@ -34,7 +34,7 @@ export const CartProvider = ({ children }) => {
                 cartItems,
                 addToCart,
                 removeFromCart,
-                updateCartItem,  // Make sure this is passed down to the CartScreen
+                updateCartItem, 
                 clearCart,
             }}
         >
